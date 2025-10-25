@@ -118,13 +118,95 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .navbar-container {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
     .nav-buttons {
-        gap: 12px;
+        gap: 15px;
     }
 
     .nav-button {
-        padding: 8px 14px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 55px;
+        padding: 0 10px;
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-buttons {
+        display: none;
+        /* esconde o menu principal em telas pequenas */
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        right: 10px;
+        background-color: #1C1C1C;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-buttons.active {
+        display: flex;
+        /* mostra o menu quando ativado */
+    }
+
+    .nav-button {
+        width: 100%;
+        justify-content: center;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: none;
+    }
+
+    .nav-button:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: #EAEAEA;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Animação para quando o menu estiver ativo */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
