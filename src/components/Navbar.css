@@ -150,7 +150,6 @@
 
     .nav-buttons {
         display: none;
-        /* esconde o menu principal em telas pequenas */
         flex-direction: column;
         position: absolute;
         top: 55px;
@@ -165,7 +164,6 @@
 
     .nav-buttons.active {
         display: flex;
-        /* mostra o menu quando ativado */
     }
 
     .nav-button {
@@ -197,7 +195,6 @@
         transition: all 0.3s ease;
     }
 
-    /* Animação para quando o menu estiver ativo */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
