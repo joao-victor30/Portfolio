@@ -1,0 +1,231 @@
+.home-container {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1F2A38, #2E3B4E, #3B4C61);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.home-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.home-photo img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-photo img:hover~.drip {
+    background: linear-gradient(45deg, #3b82f6, #ef4444);
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.home-photo img:hover~.drip1 {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.home-photo img:hover~.drip2 {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.home-photo img:hover~.drip3 {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.home-photo img:hover~.drip4 {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.home-photo img:hover~.drip5 {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.home-photo .drip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    width: 5px;
+    height: 20px;
+    top: -20px;
+    animation: dripFall linear infinite;
+}
+
+.home-photo .drip1 {
+    left: 20%;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+.home-photo .drip2 {
+    left: 40%;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+}
+
+.home-photo .drip3 {
+    left: 60%;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
+}
+
+.home-photo .drip4 {
+    left: 80%;
+    animation-duration: 3.2s;
+    animation-delay: 0.2s;
+}
+
+.home-photo .drip5 {
+    left: 50%;
+    animation-duration: 2.8s;
+    animation-delay: 0.8s;
+}
+
+@keyframes dripFall {
+    0% {
+        top: -20px;
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.2);
+    }
+
+    100% {
+        top: 100%;
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+.home-info {
+    flex: 1;
+    color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-info h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #5DADE2;
+}
+
+.home-info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 500px;
+    color: #DDE1E7;
+    text-align: justify;
+}
+
+.home-links {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #EAEAEA;
+    text-decoration: none;
+    background: linear-gradient(135deg, #5DADE2, #85C1E9);
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.home-icon span {
+    font-size: 1rem;
+}
+
+.home-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #85C1E9, #0071bc);
+}
+
+.home-icon svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home-icon:hover svg {
+    transform: scale(1.2) rotate(15deg);
+    color: #ff0505;
+}
+
+@media (max-width: 900px) {
+    .home-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .home-photo img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .home-info h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .home-info p {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .home-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .home-photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .home-info h1 {
+        font-size: 2rem;
+    }
+
+    .home-info p {
+        font-size: 1rem;
+    }
+
+    .home-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}

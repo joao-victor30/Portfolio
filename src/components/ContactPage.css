@@ -1,0 +1,141 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.contact-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #ff0055);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+
+.social-section {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.social-link img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+}
+
+.social-link img:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px #007bff);
+}
+
+
+.form-section {
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 2px solid #444;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-bottom: 2px solid #007bff;
+    outline: none;
+}
+
+.form-label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus+.form-label,
+.form-input:valid+.form-label,
+.form-textarea:focus+.form-label,
+.form-textarea:valid+.form-label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #007bff;
+}
+
+.send-btn {
+    background: linear-gradient(90deg, #007bff, #ff0055);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #007bff;
+}
+
+
+@media (max-width: 600px) {
+    .social-section {
+        gap: 15px;
+    }
+
+    .social-link img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .form-section {
+        max-width: 90%;
+    }
+}
